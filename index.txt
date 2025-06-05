@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ibhubs - Innovating Technology</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+<!-- FontAwesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+  /* Reset some default styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f9fbfd;
+  }
+  a {
+    color: #fdb714;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #d4a10e;
+  }
+  /* ===== Header ===== */
+  header {
+    background: #004d99;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  }
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    user-select: none;
+  }
+  nav {
+    margin-top: 0.5rem;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul li {
+    margin: 0 1rem;
+  }
+  nav ul li a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: inline-block;
+  }
+  nav ul li a:focus-visible {
+    outline: 2px solid #fdb714;
+    outline-offset: 2px;
+  }
+
+  /* ===== Hero Section ===== */
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 1.25rem;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero button {
+    background-color: #fdb714;
+    color: #004d99;
+    font-weight: 700;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(253, 183, 20, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hero button:hover,
+  .hero button:focus {
+    background-color: #d4a10e;
+    box-shadow: 0 6px 12px rgba(212, 161, 14, 0.6);
+  }
+
+  /* ===== About Us Section ===== */
+  section.about {
+    background-color: white;
+    padding: 4rem 1rem 4rem 1rem;
+    text-align: center;
+  }
+  section.about h2 {
+    font-size: 2.4rem;
+    color: #004d99;
+    margin-bottom: 1rem;
+  }
+  section.about p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #333333;
+  }
+  section.about img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgb(0 77 153 / 0.15);
+  }
+
+  /* ===== Services Section ===== */
+  section.services {
+    background-color: #f4f7fa;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  section.services h2 {
+    font-size: 2.4rem;
+    color: #004d99;
+    margin-bottom: 3rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 14px 24px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-card:hover,
+  .service-card:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 30px rgb(0 0 0 / 0.15);
+  }
+  .service-card .icon {
+    font-size: 3rem;
+    color: #fdb714;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #004d99;
+  }
+  .service-card p {
+    font-size: 1rem;
+    color: #555555;
+  }
+
+  /* ===== Testimonials Section ===== */
+  section.testimonials {
+    background-color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  section.testimonials h2 {
+    font-size: 2.4rem;
+    color: #004d99;
+    margin-bottom: 3rem;
+  }
+  .testimonial-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .testimonial {
+    display: none;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #444;
+    padding: 0 1rem;
+    min-height: 140px;
+  }
+  .testimonial.active {
+    display: block;
+  }
+  .testimonial-footer {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #004d99;
+  }
+  .testimonial-designation {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #777777;
+  }
+  .testimonial-controls {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .testimonial-controls button {
+    background-color: #fdb714;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 5px;
+    color: #004d99;
+    box-shadow: 0 3px 6px rgb(253 183 20 / 0.4);
+    transition: background-color 0.3s ease;
+  }
+  .testimonial-controls button:hover,
+  .testimonial-controls button:focus {
+    background-color: #d4a10e;
+    box-shadow: 0 4px 8px rgba(212, 161, 14, 0.6);
+    outline: none;
+  }
+
+  /* ===== Contact Section ===== */
+  section.contact {
+    background-color: #f4f7fa;
+    padding: 4rem 1rem 5rem 1rem;
+    text-align: center;
+  }
+  section.contact h2 {
+    font-size: 2.4rem;
+    color: #004d99;
+    margin-bottom: 2rem;
+  }
+  form.contact-form {
+    max-width: 480px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #004d99;
+    outline: none;
+  }
+  textarea {
+    min-height: 110px;
+  }
+  form.contact-form button {
+    background-color: #004d99;
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  form.contact-form button:hover,
+  form.contact-form button:focus {
+    background-color: #003366;
+    outline: none;
+  }
+  .contact-info {
+    font-size: 1rem;
+    color: #333333;
+  }
+  .contact-info p {
+    margin: 0.4rem 0;
+  }
+  .social-links a {
+    margin: 0 0.7rem;
+    font-size: 1.5rem;
+    color: #004d99;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover,
+  .social-links a:focus {
+    color: #fdb714;
+    outline: none;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  footer a {
+    color: #fdb714;
+    margin: 0 0.5rem;
+  }
+  footer a:hover,
+  footer a:focus {
+    color: #d4a10e;
+  }
+
+  /* ===== Responsive ===== */
+  @media screen and (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .service-card {
+      padding: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div class="logo" aria-label="ibhubs company logo" tabindex="0" role="img">ibhubs</div>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home" tabindex="0">Home</a></li>
+          <li><a href="#about" tabindex="0">About Us</a></li>
+          <li><a href="#services" tabindex="0">Services</a></li>
+          <li><a href="#contact" tabindex="0">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home" role="banner" aria-label="Hero section with innovation background">
+    <h1>Innovating Technology for a Better Tomorrow</h1>
+    <button aria-label="Learn more about ibhubs" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">Learn More</button>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <h2 id="about-title">About Us</h2>
+      <p>At iB Hubs, our mission is to accelerate innovation and empower individuals and organizations through advanced technology and entrepreneurship. We aim to create a collaborative ecosystem that nurtures innovation, builds futuristic solutions, and promotes holistic development across sectors.</p>
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Team collaborating in office space" />
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services section" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <h2 id="services-title">Our Services</h2>
+      <div class="services-grid">
+        <article class="service-card" tabindex="0" aria-label="Consulting service">
+          <div class="icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Consulting</h3>
+          <p>Expert guidance to help startups and enterprises integrate AI into their products, operations, and decision-making processes.</p>
+        </article>
+        <article class="service-card" tabindex="0" aria-label="Development service">
+          <div class="icon"><i class="fas fa-code"></i></div>
+          <h3>Development</h3>
+          <p>Support in building scalable, intelligent products using modern AI frameworks, tailored to solve real-world problems.</p>
+        </article>
+        <article class="service-card" tabindex="0" aria-label="Support service">
+          <div class="icon"><i class="fas fa-headset"></i></div>
+          <h3>Tech and Innovation Training</h3>
+          <p>Workshops and hands-on programs in AI, ML, and emerging tech to upskill students, professionals, and startup teams.</p>
+        </article>
+        <article class="service-card" tabindex="0" aria-label="Training service">
+          <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Startup Enablement</h3>
+          <p>End-to-end support for early-stage startups—from idea validation to go-to-market—with a strong focus on AI-driven innovation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials section" aria-labelledby="testimonials-title">
+    <div class="container">
+      <h2 id="testimonials-title">What Our Clients Say</h2>
+      <div class="testimonial-wrapper" role="list" aria-live="polite">
+        <blockquote class="testimonial active" tabindex="0" role="listitem" aria-label="Testimonial from John Doe">
+          <p>"ibhubs transformed our business with innovative solutions and exceptional service."</p>
+          <footer class="testimonial-footer">John Doe, <span class="testimonial-designation">CEO</span></footer>
+        </blockquote>
+        <blockquote class="testimonial" tabindex="0" role="listitem" aria-label="Testimonial from Jane Smith">
+          <p>"Their support team is unmatched in responsiveness and expertise."</p>
+          <footer class="testimonial-footer">Jane Smith, <span class="testimonial-designation">CTO</span></footer>
+        </blockquote>
+        <blockquote class="testimonial" tabindex="0" role="listitem" aria-label="Testimonial from Michael Lee">
+          <p>"The training programs elevated our team's skills and productivity significantly."</p>
+          <footer class="testimonial-footer">Michael Lee, <span class="testimonial-designation">HR Manager</span></footer>
+        </blockquote>
+      </div>
+      <div class="testimonial-controls" aria-label="Testimonial navigation">
+        <button type="button" id="prevTestimonial" aria-controls="testimonial" aria-label="Previous testimonial">&laquo; Prev</button>
+        <button type="button" id="nextTestimonial" aria-controls="testimonial" aria-label="Next testimonial">Next &raquo;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title">Contact Us</h2>
+      <form class="contact-form" aria-describedby="contact-desc" onsubmit="return handleSubmit(event)" novalidate>
+        <input type="text" id="name" name="name" placeholder="Name" aria-required="true" required />
+        <input type="email" id="email" name="email" placeholder="Email" aria-required="true" required />
+        <textarea id="message" name="message" rows="5" placeholder="Message" aria-required="true" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="contact-desc" class="contact-info" aria-live="polite" aria-atomic="true"></div>
+      <div class="contact-info" style="margin-top: 2rem;">
+        <p><strong>Address:</strong> ibhubs, Hyderabad, India</p>
+        <p><strong>Phone:</strong> +91 12345 67890</p>
+        <p><strong>Follow us:</strong></p>
+        <div class="social-links" role="list" aria-label="Social media links">
+          <a href="#" role="listitem" aria-label="Facebook" tabindex="0"><i class="fab fa-facebook-square"></i></a>
+          <a href="#" role="listitem" aria-label="Twitter" tabindex="0"><i class="fab fa-twitter-square"></i></a>
+          <a href="#" role="listitem" aria-label="LinkedIn" tabindex="0"><i class="fab fa-linkedin"></i></a>
+          <a href="#" role="listitem" aria-label="Instagram" tabindex="0"><i class="fab fa-instagram-square"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 ibhubs. All rights reserved.</p>
+      <p>
+        <a href="#" tabindex="0">Privacy Policy</a> | 
+        <a href="#" tabindex="0">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+  // Testimonials carousel functionality
+  (function(){
+    const testimonials = document.querySelectorAll('.testimonial');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    let current = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((t, i) => {
+        t.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(current);
+    });
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % testimonials.length;
+      showTestimonial(current);
+    });
+
+    // Auto rotate every 8 seconds
+    setInterval(() => {
+      current = (current + 1) % testimonials.length;
+      showTestimonial(current);
+    }, 8000);
+  })();
+
+  // Simple contact form submission handler, no backend, show thank you message
+  function handleSubmit(e) {
+    e.preventDefault();
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
+    const message = e.target.message.value.trim();
+    const contactDesc = document.getElementById('contact-desc');
+
+    if(name && email && message){
+      contactDesc.textContent = Thank you, ${name}! Your message has been sent. We will get back to you shortly.;
+      e.target.reset();
+    } else {
+      contactDesc.textContent = 'Please fill out all fields before submitting.';
+    }
+  }
+</script>
+
+</body>
+</html>
