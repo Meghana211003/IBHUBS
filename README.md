@@ -3,7 +3,8 @@
 This is a professional single-page website created for iB Hubs Hyderabad, a tech-driven initiative focused on AI, innovation, and entrepreneurship. The webpage was generated using AI (via a single prompt) to showcase how modern tools can accelerate front-end development.
 
  🌐 Live Preview
-[Click here to view the website](#) *(replace with your GitHub Pages or live link)*
+  Click here to view the website
+  https://meghana211003.github.io/IBHUBS/
 
 🚀 Features
 - Hero section with mission statement and call to action
